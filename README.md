@@ -4,8 +4,8 @@ This Unreal (4.24) project contains the Azure Kinect Plugin and sample map to te
 
 ## SDKs
 
-- [Azure Kinect SDK 1.3.0](https://docs.microsoft.com/en-us/azure/kinect-dk/sensor-sdk-download)
-- [Azure Kinect Body Tracking SDK 1.0.0](https://docs.microsoft.com/en-us/azure/kinect-dk/body-sdk-download)
+- [Azure Kinect SDK 1.4.0](https://docs.microsoft.com/en-us/azure/kinect-dk/sensor-sdk-download)
+- [Azure Kinect Body Tracking SDK 1.0.1](https://docs.microsoft.com/en-us/azure/kinect-dk/body-sdk-download)
 
 ## To get up and running
 
@@ -43,6 +43,7 @@ Plugins/AzureKinectUnreal/Binaries/Win64/
  - k4a.dll
  - k4abt.dll
  - depthengine_2_0.dll
+ - dnn_model_2_0.onnx
 ```
 _**Important Note 1:** In order to run the project in Unreal Editor and call the Azure Kinect API without issues, one of the following can be done._
 _[For Reference check Azure Kinect SDK Issue 709](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/709#issuecomment-545132613)_
