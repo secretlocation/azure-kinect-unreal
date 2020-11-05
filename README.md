@@ -1,6 +1,6 @@
 # Azure Kinect Unreal Plugin
 
-This Unreal (4.24) project contains the Azure Kinect Plugin and sample map to test the Plugin. The Plugin integrates the **Azure Kinect Sensor SDK (K4A)** and **Azure Kinect Body Tracking SDK (K4ABT)**. It captures and processes the Body Tracking data and maps it onto the Unreal Mannequin skeletal mesh. The plugin supports tracking up to a maximum of 10 bodies.
+This Unreal (**4.25**) project contains the Azure Kinect Plugin and sample map to test the Plugin. The Plugin integrates the **Azure Kinect Sensor SDK (K4A)** and **Azure Kinect Body Tracking SDK (K4ABT)**. It captures and processes the Body Tracking data and maps it onto the Unreal Mannequin skeletal mesh. The plugin supports tracking up to a maximum of 10 bodies.
 
 ## SDKs
 
