@@ -4,12 +4,18 @@ This Unreal (**4.25**) project contains the Azure Kinect Plugin and sample map t
 
 ## SDKs
 
-- [Azure Kinect SDK 1.4.0](https://docs.microsoft.com/en-us/azure/kinect-dk/sensor-sdk-download)
+- [Azure Kinect SDK 1.4.1](https://docs.microsoft.com/en-us/azure/kinect-dk/sensor-sdk-download)
 - [Azure Kinect Body Tracking SDK 1.0.1](https://docs.microsoft.com/en-us/azure/kinect-dk/body-sdk-download)
 
 ## To get up and running
 
- - Add the `<Azure Kinect Body Tracking SDK installation>/tools` folder to the `Path` variable in `Environment Variables` for User or System.
+1. Add the `<Azure Kinect Body Tracking SDK installation>/tools` folder to the `Path` variable in `Environment Variables` for User or System.
+2. If you want to enable Azure Kinect logging, run the following 4 commands in Command Prompt as an admin:
+   `setx K4A_ENABLE_LOG_TO_A_FILE k4a.log /M`
+   `setx K4A_LOG_LEVEL w /M`
+   `setx K4ABT_ENABLE_LOG_TO_A_FILE k4abt.log /M`
+   `setx K4ABT_LOG_LEVEL w /M`
+   The logs will be found in the path `<unreal_installation_folder>/Engine/Binaries/Win64/` in the files `k4a.log` for Azure Kinect and `k4abt.log` for Azure Kinect Body Tracking.
 
 The [Notes](README.md#notes) section below has more FYI.
 
@@ -36,32 +42,31 @@ Maps/
 
 ## Notes
 
-The following dlls and their dependency files are needed for the Azure Kinect API to work.
-Since Unreal will search in `Engine/Binaries/Win64`, `Project/Binaries/Win64`, `Engine/Plugins/.../Binaries/Win64` and `Project/Plugins/.../Binaries/Win64` folders to load the dependent dll files, the following are put in the plugin binaries folder. This will ensure that the project will compile and open in UE4 editor.
+The Azure Kinect project will need to reference the following dll to function:
 ```
-Plugins/AzureKinectUnreal/Binaries/Win64/
- - k4a.dll
- - k4abt.dll
- - depthengine_2_0.dll
- - dnn_model_2_0.onnx
-```
-_**Important Note 1:** In order to run the project in Unreal Editor and call the Azure Kinect API without issues, one of the following can be done._
-_[For Reference check Azure Kinect SDK Issue 709](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/709#issuecomment-545132613)_
-
- - _1. Add the `<Azure Kinect Body Tracking SDK installation>/tools` folder to the `Path` variable in `Environment Variables` for User or System._
-
-_(OR)_
-
- - _2. The below mentioned dependent files can be copied to the `Unreal installation folder` where `UE4Editor.exe` resides. Eg: `C:\Program Files\Epic Games\UE_4.24\Engine\Binaries\Win64`. The dependent dll files can be found in `<Azure Kinect Body Tracking SDK installation>/tools` folder._
-```
-<unreal_installation_folder>/Engine/Binaries/Win64/
- - onnxruntime.dll
- - cudnn64_7.dll
- - cudart64_100.dll
- - cublas64_100.dll
+k4a.dll  
+k4abt.dll  
+depthengine_2_0.dll  
+dnn_model_2_0.onnx  
+onnxruntime.dll  
+cudnn64_7.dll  
+cudart64_100.dll  
+cublas64_100.dll  
 ```
 
-_**Important Note 2:** It is **No** longer required to place the `dnn_model_2_0.onnx` file in the `Unreal Installation folder`. This file is already placed in the `Plugins/AzureKinectUnreal/Binaries/Win64` and Unreal checks this folder and loads the file. This file is needed for the Body Tracking to work._
+We've included some of these dlls in `Project/Plugins/AzureKinectUnreal/Binaries/Win64`, just to allow the project to compile when opened directly after cloning:
+```
+k4a.dll
+k4abt.dll
+depthengine_2_0.dll
+dnn_model_2_0.onnx
+```
+
+If you're getting errors with dlls or libraries not loading properly, check if the libraries that exist in these places are all of the same version.  
+Keep in mind that you only need the dlls/libraries in one of these places:
+ - `<Azure Kinect Body Tracking SDK installation>/tools`, if this has been added to your PATH in the environmental variables. This is the best place to keep them, as it's the location all Azure Kinect stuff uses. You can have the libraries exist only here and nowhere else, and it should work just fine.
+ - `<Unreal Installation Folder>/Engine/Binaries/Win64/`. You don't have to put any dlls or libraries here if you have the body tracking sdk tools in your PATH
+ - `Plugins/AzureKinectUnreal/Binaries/Win64/`. We've included some dlls here to make sure it compiles from a straight clone. You can delete them if they mismatch with your body tracking SDK version and it's added to your PATH.
 
 
 ## Disclaimer
