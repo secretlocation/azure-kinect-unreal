@@ -102,3 +102,7 @@ Kindly check the following.
 Kindly check the `Output Log` window and if the issue is something related to the `Device` then check the `k4a.log` and if it is related to the `Body Tracking` then check the `k4abt.log`. These log files can be found in `<unreal_installation_folder>/Engine/Binaries/Win64/`.
 
 If these log files are not present then kindly check [here](https://docs.microsoft.com/en-us/azure/kinect-dk/troubleshooting#collecting-logs) in order to enable the logs.
+
+#### The project can't find the Azure Kinect
+
+Check if the Azure Kinect shows up under the *Cameras* section of the Device Manager. It sometimes doesn't connect on startup, which can be fixed by unplugging the USB core and plugging it back in. The white LED on the front will show it connecting.
