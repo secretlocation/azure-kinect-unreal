@@ -60,6 +60,7 @@ k4a.dll
 k4abt.dll
 depthengine_2_0.dll
 dnn_model_2_0.onnx
+onnxruntime.dll  
 ```
 
 If you're getting errors with dlls or libraries not loading properly, check if the libraries that exist in these places are all of the same version.  
