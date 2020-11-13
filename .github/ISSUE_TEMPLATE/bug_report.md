@@ -5,7 +5,7 @@ about: Report a bug in the code or blueprints
 ---
 
 ### Bug
- - <!--What problem are you seeing-->
+<!--What problem are you seeing-->
 
 ### Logs
 ```
