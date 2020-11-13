@@ -13,9 +13,8 @@ Logs go here
 ```
 
 ### SDK and UE4 versions
----
-UE4: <!--ex: 4.25.3-->
-Azure Kinect: 1.4.1
-AK Body Tracking: 1.0.1
 
----
+| UE4 | Azure Kinect | AK Body Tracking |
+|:---:|:---:|:---:|
+| 4.25.3 |  1.4.1 | 1.0.1 |
+
