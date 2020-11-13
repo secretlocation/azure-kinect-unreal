@@ -6,7 +6,6 @@
 <!-- A brief few sentences summarizing the changes in the pull request -->
 
 ### Added
-
  - <!-- Only newly added things should be mentioned here-->
 
 ### Removed
