@@ -11,10 +11,10 @@ This Unreal (**4.25**) project contains the Azure Kinect Plugin and sample map t
 
 1. Add the `<Azure Kinect Body Tracking SDK installation>/tools` folder to the `Path` variable in `Environment Variables` for User or System.
 2. If you want to enable Azure Kinect logging, run the following 4 commands in Command Prompt as an admin:
-   `setx K4A_ENABLE_LOG_TO_A_FILE k4a.log /M`
-   `setx K4A_LOG_LEVEL w /M`
-   `setx K4ABT_ENABLE_LOG_TO_A_FILE k4abt.log /M`
-   `setx K4ABT_LOG_LEVEL w /M`
+   `setx K4A_ENABLE_LOG_TO_A_FILE k4a.log /M`  
+   `setx K4A_LOG_LEVEL w /M`  
+   `setx K4ABT_ENABLE_LOG_TO_A_FILE k4abt.log /M`  
+   `setx K4ABT_LOG_LEVEL w /M`  
    The logs will be found in the path `<unreal_installation_folder>/Engine/Binaries/Win64/` in the files `k4a.log` for Azure Kinect and `k4abt.log` for Azure Kinect Body Tracking.
 
 The [Notes](README.md#notes) section below has more FYI.
