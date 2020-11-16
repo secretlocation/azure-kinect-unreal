@@ -108,4 +108,4 @@ If these log files are not present then kindly check [here](https://docs.microso
 
 #### The project can't find the Azure Kinect
 
-Check if the Azure Kinect shows up under the *Cameras* section of the Device Manager. It sometimes doesn't connect on startup, which can be fixed by unplugging the USB core and plugging it back in. The white LED on the front will show it connecting.
+Kindly check if the Azure Kinect shows up under the *Cameras* section of the Device Manager. It sometimes doesn't connect on startup, which can be fixed by unplugging the USB core and plugging it back in. The white LED on the front will show it connecting.
