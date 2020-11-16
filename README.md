@@ -65,8 +65,10 @@ onnxruntime.dll
 
 If you're getting errors with dlls or libraries not loading properly, check if the libraries that exist in these places are all of the same version.  
 Keep in mind that you only need the dlls/libraries in one of these places:
- - `<Azure Kinect Body Tracking SDK installation>/tools`, if this has been added to your PATH in the environmental variables. This is the best place to keep them, as it's the location all Azure Kinect stuff uses. You can have the libraries exist only here and nowhere else, and it should work just fine.
- - `<Unreal Installation Folder>/Engine/Binaries/Win64/`. You don't have to put any dlls or libraries here if you have the body tracking sdk tools in your PATH
+- `<Azure Kinect Body Tracking SDK installation>/tools`, if this has been added to your PATH in the environmental variables. This is the best place to keep them, as it's the location all Azure Kinect stuff uses. You can have the libraries exist only here and nowhere else, and it should work just fine. 
+**(or)**
+ - `<Unreal Installation Folder>/Engine/Binaries/Win64/`. You don't have to put any dlls or libraries here if you have the body tracking sdk tools in your PATH. 
+ **(or)**
  - `Plugins/AzureKinectUnreal/Binaries/Win64/`. We've included some dlls here to make sure it compiles from a straight clone. You can delete them if they mismatch with your body tracking SDK version and it's added to your PATH.
 
 
