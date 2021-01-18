@@ -26,7 +26,7 @@ public:
 	~AzureKinectDevice();
 
 	/** Initalizes the Azure kinect device with the given Depth Mode. */
-	bool Initialize(k4a_depth_mode_t DepthMode);
+	bool Initialize(k4a_depth_mode_t DepthMode, int32_t GpuDeviceId);
 	/** Shuts down this device */
 	void Shutdown();
 

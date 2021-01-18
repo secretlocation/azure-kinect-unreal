@@ -30,10 +30,15 @@ AzureKinectDevice::~AzureKinectDevice()
 	Shutdown();
 }
 
-bool AzureKinectDevice::Initialize(k4a_depth_mode_t DepthMode)
+bool AzureKinectDevice::Initialize(k4a_depth_mode_t DepthMode, int32_t GpuDeviceId)
 {
 	try
 	{
+		k4abt_tracker_t tracker = nullptr;
+		k4abt_tracker_configuration_t tracker_config = K4ABT_TRACKER_CONFIG_DEFAULT;
+		tracker_config.processing_mode = K4ABT_TRACKER_PROCESSING_MODE_GPU;
+		tracker_config.gpu_device_id = GpuDeviceId;
+
 		// Open the Azure Kinect Device
 		NativeKinectDevice = k4a::device::open(DeviceId);
 
@@ -48,7 +53,7 @@ bool AzureKinectDevice::Initialize(k4a_depth_mode_t DepthMode)
 		k4a::calibration sensorCalibration = NativeKinectDevice.get_calibration(deviceConfig.depth_mode, deviceConfig.color_resolution);
 
 		// Create the Body tracker using the calibration
-		NativeBodyTracker = k4abt::tracker::create(sensorCalibration);
+		NativeBodyTracker = k4abt::tracker::create(sensorCalibration, tracker_config);
 	}
 	catch (k4a::error initError)
 	{
