@@ -32,9 +32,10 @@ public:
 	 * @param DeviceId The device id of the Azure Kinect Device to initialize.
 	 * @param DepthMode The default is set to NFOV_UNBINNED. For body tracking it should be NFOV_UNBINNED or WFOV_BINNED.
 	 * @param TimeOutInMilliSecs Default is Zero (Non-blocking). Set it to -1 (K4A_WAIT_INFINITE) for Blocking call.
+	 * @param GpuDeviceId Gpu device Id to use.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Azure Kinect", meta = (DisplayName = "Init Azure Kinect"))
-	static void InitDevice(int32 DeviceId = 0, EKinectDepthMode DepthMode = EKinectDepthMode::NFOV_UNBINNED, int32 TimeOutInMilliSecs = 0);
+	static void InitDevice(int32 DeviceId = 0, EKinectDepthMode DepthMode = EKinectDepthMode::NFOV_UNBINNED, int32 TimeOutInMilliSecs = 0, int32 GpuDeviceId = 0);
 
 	/** Shuts down the azure kinect device with the given device id. */
 	UFUNCTION(BlueprintCallable, Category = "Azure Kinect", meta = (DisplayName = "Shutdown Azure Kinect"))
