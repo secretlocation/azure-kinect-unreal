@@ -34,7 +34,6 @@ bool AzureKinectDevice::Initialize(k4a_depth_mode_t DepthMode, int32_t GpuDevice
 {
 	try
 	{
-		k4abt_tracker_t tracker = nullptr;
 		k4abt_tracker_configuration_t tracker_config = K4ABT_TRACKER_CONFIG_DEFAULT;
 		tracker_config.processing_mode = K4ABT_TRACKER_PROCESSING_MODE_GPU;
 		tracker_config.gpu_device_id = GpuDeviceId;
